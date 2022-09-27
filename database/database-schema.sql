@@ -54,7 +54,7 @@ CREATE TABLE Albums(
   Album_name VARCHAR(50) NOT NULL,
   years int NOT NULL,
   Artist_id int NOT NULL,
-  FOREIGN KEY (Artist_id) REFERENCES Artists(Artist_id)
+  FOREIGN KEY (Artist_id) REFERENCES Artists(Artist_id) ON DELETE CASCADE,
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- Songs table
@@ -66,7 +66,7 @@ CREATE TABLE Songs(
   Album_id int NOT NULL,
   Artist_id int NOT NULL,
   FOREIGN KEY (Album_id)
-  REFERENCES Albums(Album_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  REFERENCES Albums(Album_id) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (Artist_id)
-  REFERENCES Artists(Artist_id) ON UPDATE CASCADE ON DELETE RESTRICT
+  REFERENCES Artists(Artist_id) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
