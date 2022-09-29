@@ -77,7 +77,5 @@ router.delete("/songs/:id", deleteSong);
 
 router.patch("/songs/:id", patchSong);
 
-module.exports = router;
-
 
 module.exports = router;
