@@ -54,7 +54,7 @@ CREATE TABLE Albums(
   Album_name VARCHAR(50) NOT NULL,
   years int NOT NULL,
   Artist_id int NOT NULL,
-  FOREIGN KEY (Artist_id) REFERENCES Artists(Artist_id) ON DELETE CASCADE,
+  FOREIGN KEY (Artist_id) REFERENCES Artists(Artist_id) ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- Songs table

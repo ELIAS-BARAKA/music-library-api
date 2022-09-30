@@ -5,11 +5,11 @@ const safeDescribe = require("~test/utils/safeDescribe");
 const deleteArtistById = require("./queries/deleteArtistById");
 
 safeDescribe("#POST artists", () => {
-  let artistIdCreated;
+  // let artistIdCreated;
 
-  after(async () => {
-    await deleteArtistById({ artistId: artistIdCreated });
-  });
+  // after(async () => {
+  //   await deleteArtistById({ artistId: artistIdCreated });
+  // });
 
   it("creates a new artist in the database", async () => {
     const response = await request(router)
@@ -19,7 +19,7 @@ safeDescribe("#POST artists", () => {
         genre: "Rock"
       });
 
-    artistIdCreated = response.body.artistId;
+    // artistIdCreated = response.body.artistId;
 
     expect(response.status).to.equal(201);
   });
